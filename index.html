@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function Dog(name, age, gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+
+    function Animal() {
+        this.size = 18;
+
+        this.eat = function() {
+            console.log("开始吃饭啦");
+        }
+
+        this.say = function() {
+            console.log("开始叫啦");
+        }
+    }
+
+    //Dog要继承Animal, 来使用Animal的方法
+
+    Dog.prototype = new Animal();
+
+    var dog = new Dog('旺财', 5, '公');
+
+    dog.eat();
+    dog.say();
+    console.log(dog.hot);
+
+</script>
+</html>
