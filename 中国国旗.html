@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+    <style type="text/css">
+   
+    </style>
+    <script type="text/javascript" src="./konva.js"></script>
+</head>
+<body>
+<div id="box" width="1200" height="800"></div>
+</body>
+<script type="text/javascript">
+    var stage = new Konva.Stage({
+        width: 1200,
+        height:800,
+        container:'box'
+    })
+    var layer = new Konva.Layer();
+
+    stage.add(layer);
+
+    var bg = new Konva.Rect({
+        x:0, 
+        y:0, 
+        width:stage.getWidth(),
+        height:stage.getHeight(),
+        fill:"red"
+    })
+
+    var star= new Konva.Star({
+        x:stage.getWidth()/6,
+        y:stage.getHeight()/4,
+        numPoints:5,
+        innerRadius:(stage.getWidth()/10)/(3-4*Math.sin(Math.PI/10)*Math.sin(Math.PI/10)),
+        outerRadius:stage.getWidth()/10,
+        fill:'yellow',
+        
+    });
+    var star1= new Konva.Star({
+        x:stage.getWidth()/3,
+        y:stage.getHeight()/10,
+        numPoints:5,
+        innerRadius:(stage.getWidth()/30)/(3-4*Math.sin(Math.PI/10)*Math.sin(Math.PI/10)),
+        outerRadius:stage.getWidth()/30,
+        fill:'yellow',
+        rotation: -90-Math.atan(3/5)*180/Math.PI
+    
+    });
+    var star2= new Konva.Star({
+        x:stage.getWidth()*2/5,
+        y:stage.getHeight()/5,
+        numPoints:5,
+        innerRadius:(stage.getWidth()/30)/(3-4*Math.sin(Math.PI/10)*Math.sin(Math.PI/10)),
+        outerRadius:stage.getWidth()/30,
+        fill:'yellow',
+        rotation: -90-Math.atan(1/7)*180/Math.PI
+
+    });
+    var star3= new Konva.Star({
+        x:stage.getWidth()*2/5,
+        y:stage.getHeight()*7/20,
+        numPoints:5,
+        innerRadius:(stage.getWidth()/30)/(3-4*Math.sin(Math.PI/10)*Math.sin(Math.PI/10)),
+        outerRadius:stage.getWidth()/30,
+        fill:'yellow',
+        rotation: Math.atan(2/7)*180/Math.PI-90
+
+    });
+    var star4= new Konva.Star({
+        x:stage.getWidth()/3,
+        y:stage.getHeight()*9/20,
+        numPoints:5,
+        innerRadius:(stage.getWidth()/30)/(3-4*Math.sin(Math.PI/10)*Math.sin(Math.PI/10)),
+        outerRadius:stage.getWidth()/30,
+        fill:'yellow',
+        rotation: Math.atan(4/5)*180/Math.PI-90
+
+    });
+
+    layer.add(bg);
+    layer.add(star);
+    layer.add(star1);
+    layer.add(star2);
+    layer.add(star3);
+    layer.add(star4);
+
+    layer.draw();
+
+</script>
+</html>
